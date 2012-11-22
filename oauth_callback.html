@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head><title>Instagram Notifications</title></head>
+<body>
+	<p class="info"></p>
+	<table>
+		<tr class="header">
+			<th>ID</th>
+			<th>Type</th>
+			<th>User</th>
+			<th>Photo</th>
+			<th>Comment</th>
+		</tr>
+	</table>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="instagramnotifications.js"></script>
+<script>
+	instagramnotifications.init(); //uses the access_token in the window hash. Client side auth used
+	//pinstagramnotify.init({access_token:123});
+	instagramnotifications.getnotifications();
+	setInterval("instagramnotifications.getnotifications()",60000);
+</script>
+</html>
